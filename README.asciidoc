@@ -1,5 +1,5 @@
 = Djanga
-
+w00t
 A Codefresh onboarding tutorial.
 
 Use this humble repository to familiarize yourself with basic Codefresh functionality once you've got the development
