@@ -20,7 +20,7 @@ steps:
     tag: jimbob
   
   unit-test:
-    image: noamt/djanga1338:tag1
+    image: ${{build-djanga}}
     commands: 
       - exit 0
   
