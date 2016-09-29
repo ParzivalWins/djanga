@@ -1,6 +1,12 @@
 version: '1.0'
 
 steps:
+
+  create-file:
+    image: alpine:latest
+    working-directory: ${{initial-clone}}
+    commands: 
+      - touch jim
   
   build-djanga:
     type: build
