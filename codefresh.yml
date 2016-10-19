@@ -1,52 +1,11 @@
 version: '1.0'
 
 steps:
-
-  create-file:
-    image: alpine:latest
-    working-directory: ${{initial-clone}}
-    commands: 
-      - touch jim
-  
   build-djanga:
     type: build
-    dockerfile:
-      content: |
-        FROM python:3.3
-        ENV PYTHONUNBUFFERED 1
-        RUN mkdir /code
-        WORKDIR /code
-        ADD requirements.txt /code/
-        ADD requirements.txt /opt/codefresh/something
-        RUN pip install -r requirements.txt
-        ADD . /code/
-        RUN apt-get update && apt-get install -y netcat
-      
-    image-name: noamt/djanga1338
-    tag: jimbob
-  
-  unit-test:
-    image: ${{build-djanga}}
-    commands: 
-      - exit 0
-  
-  #test-comp:
-  #  type: composition
-  #  description: It composes the Djanga Service
-  #  composition: dja
-  #  composition-candidates:
-  #    web:
-  #      volumes:
-  #        - data:/mydata/
-  #      image: 'noamt/sbtest:latest'
-  #      command: yes
-  #  composition-variables:
-  #    - key=value
-
-  #push-dockerhub:
-   # type: push
-    #candidate: ${{build-djanga}}
-    #tag: awesomeness
-    #credentials:
-     # username: ${{username}}
-      #password: ${{password}}
+    image-name: noamt/djanga
+    tag: develop
+    
+  push-dockerhub:
+    type: push
+    candidate: ${{build-djanga}}
