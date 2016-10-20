@@ -4,7 +4,7 @@ steps:
   build-djanga:
     type: build
     image-name: noamt/djanga
-    tag: develop
+    tag: ${{CF_SHORT_REVISION}}
     
   push-dockerhub:
     type: push
