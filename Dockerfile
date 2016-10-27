@@ -4,6 +4,8 @@ RUN mkdir /code
 WORKDIR /code
 ADD requirements.txt /code/
 
+EXPORT 1337
+
 #Adding comment
 ADD requirements.txt /opt/codefresh/something
 RUN pip install -r requirements.txt
