@@ -4,7 +4,7 @@ RUN mkdir /code
 WORKDIR /code
 ADD requirements.txt /code/
 
-EXPORT 1337
+EXPOSE 1337
 
 #Adding comment
 ADD requirements.txt /opt/codefresh/something
