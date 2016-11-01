@@ -5,7 +5,23 @@ steps:
     type: build
     image-name: noamt/djanga
     tag: ${{CF_SHORT_REVISION}}
-    
+  
+  cf-comp:
+    type: composition
+    composition:
+      version: '2'
+      services:
+        db:
+          image: postgres
+    composition-candidates:
+      web:
+          image: 'noamt/djanga:master'
+          command: 'exit 0'
+          ports:
+            - '8000'
+          links:
+            - db
+  
   push-dockerhub:
     type: push
     candidate: ${{build-djanga}}
