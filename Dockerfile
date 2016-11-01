@@ -4,7 +4,7 @@ RUN mkdir /code
 WORKDIR /code
 ADD requirements.txt /code/
 
-EXPOSE 8000
+#EXPOSE 8000
 
 #Adding comment
 ADD requirements.txt /opt/codefresh/something
