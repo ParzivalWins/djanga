@@ -16,7 +16,7 @@ steps:
     composition-candidates:
       web:
           image: 'noamt/djanga:master'
-          command: bash -c 'exit 0'
+          command: bash -c 'exit 1'
           ports:
             - '8000'
           links:
