@@ -3,14 +3,14 @@ version: '1.0'
 steps:
   create_file:
     image: alpine:latest
-    working-directory: /
+    working-directory: /codefresh/volume
     commands:
       - touch jim
       - echo "moo" >> jim
    
   read_file:
     image: alpine:latest
-    working-directory: /
+    working-directory: /codefresh/volume
     commands:
       - pwd
       - echo "reading jimmmmm#############:"
