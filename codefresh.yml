@@ -35,6 +35,6 @@ steps:
   #        links:
   #          - db
   
-  push-dockerhub:
-    type: push
-    candidate: ${{build-djanga}}
+  #push-dockerhub:
+  #  type: push
+  #  candidate: ${{build-djanga}}
