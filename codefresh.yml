@@ -1,10 +1,23 @@
 version: '1.0'
 
 steps:
-  build-djanga:
-    type: build
-    image-name: noamt/djanga
-    tag: ${{CF_SHORT_REVISION}}
+  create_file:
+    image: alpine:latest
+    working-directory: /codefresh/volume
+    commands:
+      - touch jim
+      - echo "moo" >> jim
+   
+  read_file:
+    image: alpine:latest
+    working-directory: /codefresh/volume
+    commands:
+      - echo "reading jimmmmm#############:"
+      - echo jim
+  #build-djanga:
+  #  type: build
+  #  image-name: noamt/djanga
+  #  tag: ${{CF_SHORT_REVISION}}
   
   #cf-comp:
   #  type: composition
