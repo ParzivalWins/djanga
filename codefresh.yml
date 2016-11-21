@@ -1,12 +1,12 @@
 version: '1.0'
 
 steps:
-  #create_file:
-  #  image: alpine:latest
-  #  working-directory: /
-  #  commands:
-  #    - touch jim
-  #    - echo "moo" >> jim
+  create_file:
+    image: alpine:latest
+    working-directory: /
+    commands:
+      - touch jim
+      - echo "moo" >> jim
    
   read_file:
     image: alpine:latest
