@@ -14,7 +14,7 @@ steps:
     commands:
       - pwd
       - echo "reading jimmmmm#############:"
-      - echo jim
+      - cat jim
   #build-djanga:
   #  type: build
   #  image-name: noamt/djanga
