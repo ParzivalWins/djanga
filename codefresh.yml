@@ -1,42 +1,21 @@
 version: '1.0'
 
 steps:
-  create_file:
-    image
-    #alpine:latest
-    #working_directory: /codefresh/volume
-    #commands:
-    #  - touch jim
-    #  - echo "moo" >> jim
-   
-  read_file:
-    image: alpine:latest
-    working-directory: /codefresh/volume
-    commands:
-      - pwd
-      - echo "reading jimmmmm#############:"
-      - cat jim
-  #build-djanga:
-  #  type: build
-  #  image-name: noamt/djanga
-  #  tag: ${{CF_SHORT_REVISION}}
-  
-  #cf-comp:
-  #  type: composition
-  #  composition:
-  #    version: '2'
-  #    services:
-  #      db:
-  #        image: postgres
-  #  composition-candidates:
-  #    web:
-  #        image: 'noamt/djanga:master'
-  #        command: bash -c 'exit 1'
-  #        ports:
-  #          - '8000'
-  #        links:
-  #          - db
-  
-  #push-dockerhub:
-  #  type: push
-  #  candidate: ${{build-djanga}}
+  composition_step:
+      description: Attempting to run as part of composition.
+      type: composition
+      composition:
+#        version: '2'
+#        services:
+#          app:
+#            image: 'advance512demo/demochat:master'
+#            ports:
+#              - 5000
+#            depends_on:
+#              - mongo
+#          mongo:
+#            image: mongo
+      composition-candidates:
+        main:
+          image: nhoag/curl
+          command: bash -c "sleep 20 && curl http://app:5000/" | echo 'works'
