@@ -2,11 +2,12 @@ version: '1.0'
 
 steps:
   create_file:
-    image: alpine:latest
-    working_directory: /codefresh/volume
-    commands:
-      - touch jim
-      - echo "moo" >> jim
+    image: 
+    #alpine:latest
+    #working_directory: /codefresh/volume
+    #commands:
+    #  - touch jim
+    #  - echo "moo" >> jim
    
   read_file:
     image: alpine:latest
