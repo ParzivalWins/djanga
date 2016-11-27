@@ -5,16 +5,16 @@ steps:
       description: Attempting to run as part of composition.
       type: composition
       composition:
-#        version: '2'
-#        services:
-#          app:
-#            image: 'advance512demo/demochat:master'
-#            ports:
-#              - 5000
-#            depends_on:
-#              - mongo
-#          mongo:
-#            image: mongo
+        version: '2'
+        services:
+          app:
+            image: 'advance512demo/demochat:master'
+            ports:
+              - 5000
+            depends_on:
+              - mongo
+          mongo:
+            image: mongo
       composition-candidates:
         main:
           image: nhoag/curl
