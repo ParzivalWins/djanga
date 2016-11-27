@@ -2,6 +2,6 @@ version: '1.0'
 
 steps:
    entry:
-     image: alpine:latest
+     image: noamt/djanga:master
      entry-point:
        - echo "jim"
