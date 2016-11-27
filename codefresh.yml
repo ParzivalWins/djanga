@@ -4,4 +4,6 @@ steps:
    entry:
      image: noamt/djanga:master
      entry-point:
+       - bash
+       - -c
        - echo "jim"
