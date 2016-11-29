@@ -3,7 +3,7 @@ version: '1.0'
 steps:
    entry:
      image: noamt/djanga:master
-     entry-point:
+     entry_point:
        - bash
        - -c
        - echo "jim"
