@@ -1,9 +1,10 @@
 version: '1.0'
 
 steps:
-   entry:
-     image: noamt/djanga:master
-     entry_point:
-       - bash
-       - -c
-       - echo "jim"
+   buildit:
+     type: build
+     image-name: noamt/djanga
+     metadata:
+       set:
+         - qa: passed
+         - dangling
