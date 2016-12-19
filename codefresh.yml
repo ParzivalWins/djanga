@@ -7,4 +7,3 @@ steps:
      metadata:
        set:
          - qa: passed
-         - dangling
