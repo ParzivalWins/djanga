@@ -7,3 +7,23 @@ steps:
      metadata:
        set:
          - qa: passed
+   
+   annotateit:
+     image: alpine:latest
+     commands:
+       - echo jim
+     on_success:
+       metadata:
+         set:
+           - ${{buildit.image}}:
+             - qa: passed
+     on_fail:
+       metadata:
+         set:
+           - ${{buildit.image}}:
+             - qa: failed
+     on_finish:
+       metadata:
+         set:
+           - ${{buildit.image}}:
+             - finised: true
