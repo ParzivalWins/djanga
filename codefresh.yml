@@ -15,15 +15,15 @@ steps:
      on_success:
        metadata:
          set:
-           - ${{buildit.image}}:
+           - ${{buildit.imageName}}:
              - qa: passed
      on_fail:
        metadata:
          set:
-           - ${{buildit.image}}:
+           - ${{buildit.imageName}}:
              - qa: failed
      on_finish:
        metadata:
          set:
-           - ${{buildit.image}}:
+           - ${{buildit.imageName}}:
              - finised: true
