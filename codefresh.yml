@@ -6,7 +6,7 @@ steps:
      image-name: noamt/djanga
      metadata:
        set:
-         - qa: passed
+         - qa: maybe
    
    annotateit:
      image: alpine:latest
