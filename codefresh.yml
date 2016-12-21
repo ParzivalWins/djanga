@@ -11,7 +11,7 @@ steps:
    annotateit:
      image: alpine:latest
      commands:
-       - echo jim
+       - exit 1
      on_success:
        metadata:
          set:
