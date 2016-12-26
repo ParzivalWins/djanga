@@ -14,22 +14,18 @@ steps:
              - finised: true
 
    
-   #annotateit:
-   #  image: alpine:latest
-   #  commands:
-   #    - echo jim
-   #  on_success:
-   #    metadata:
-   #      set:
-   #        - ${{buildit.imageId}}:
-   #          - qa: passed
-   #  on_fail:
-   #    metadata:
-   #      set:
-   #        - ${{buildit.imageId}}:
-   #          - qa: failed
-   #  on_finish:
-   #    metadata:
-   #      set:
-   #        - ${{buildit.imageId}}:
-   #          - finised: true
+   freestyle_step:
+     image: node:latest
+     commands:
+       - echo test
+     on_success:
+       metadata:
+         set:
+           - ${{buildit.imageId}}:
+             - is_unit_test: true
+     on_fail:
+       metadata:
+         set:
+           - ${{buildit.imageId}}:
+             - is_unit_test: false
+
