@@ -14,18 +14,20 @@ steps:
              - finised: true
 
    
-   freestyle_step:
-     image: node:latest
-     commands:
-       - exit 1
+   push_step:
+     description: Pushing image to Docker hub.
+     type: push
+     candidate: ${{buildit}}
+     tag: ${{CF_BRANCH}}
+     fail-fast: false
      on_success:
        metadata:
          set:
            - ${{buildit.imageId}}:
-             - is_unit_test: true
+             - is_pushed: true
      on_fail:
        metadata:
          set:
            - ${{buildit.imageId}}:
-             - is_unit_test: false
+             - is_pushed: false
 
