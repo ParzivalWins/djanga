@@ -17,7 +17,7 @@ steps:
    freestyle_step:
      image: node:latest
      commands:
-       - echo test
+       - exit 1
      on_success:
        metadata:
          set:
