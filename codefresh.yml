@@ -1,28 +1,9 @@
 version: '1.0'
 
 steps:
-   buildit:
-     type: build
-     image-name: noamt/djanga
-     metadata:
-       set:
-         - qa: pending
+   something_or_another:
+     image: alpine
+     commands:
+       - exit 0
 
-   
-   push_step:
-     description: Pushing image to Docker hub.
-     type: push
-     candidate: ${{buildit}}
-     tag: ${{CF_BRANCH}}
-     fail-fast: false
-     on_success:
-       metadata:
-         set:
-           - ${{buildit.imageId}}:
-             - is_pushed: true
-     on_fail:
-       metadata:
-         set:
-           - ${{buildit.imageId}}:
-             - is_pushed: false
 
