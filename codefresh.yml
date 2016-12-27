@@ -6,12 +6,7 @@ steps:
      image-name: noamt/djanga
      metadata:
        set:
-         - qa: maybe
-     on_finish:
-       metadata:
-         set:
-           - ${{buildit.imageId}}:
-             - finised: true
+         - qa: pending
 
    
    push_step:
