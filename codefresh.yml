@@ -4,6 +4,6 @@ steps:
    something_or_another:
      image: alpine
      commands:
-       - exit 0
+       - exit 1
 
 
