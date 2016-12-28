@@ -2,10 +2,7 @@ version: '1.0'
 
 steps:
    something_or_another:
-     image: gcr.io/codefresh-production/atom---website-builder:58a3f6f371010598fe370d6a8aed37ebe9b5f201
-     working_directory: IMAGE_WORK_DIR
-     commands :
-       - webpack -p
-       - ./deploy.sh $CF_BRANCH
-
+     image: alpine
+     commands:
+       - exit 1
 
