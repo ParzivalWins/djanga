@@ -4,5 +4,6 @@ steps:
    something_or_another:
      image: alpine
      commands:
-       - exit 1
+       - exit 0
+     vm: google
 
