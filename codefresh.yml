@@ -5,5 +5,5 @@ steps:
      image: alpine
      commands:
        - exit 0
-     vm: google
+     vm: amazon
 
