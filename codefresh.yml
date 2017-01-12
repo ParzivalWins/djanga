@@ -1,8 +1,12 @@
 version: '1.0'
 
 steps:
+   buildit:
+     type: build
+     image-name: noamt/djanga-testable
+   
    something_or_another:
-     image: alpine
+     image: ${{buildit}}
      commands:
        - exit 0
      vm: amazon
