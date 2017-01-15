@@ -9,5 +9,7 @@ steps:
      image: ${{buildit}}
      commands:
        - exit 0
-     vm: amazon
+     docker_machine:
+       create:
+         provider: amazon
 
