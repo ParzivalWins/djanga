@@ -6,5 +6,5 @@ steps:
      composition: asd
      docker_machine:
        create:
-         provider: google
+         provider: amazon
 
