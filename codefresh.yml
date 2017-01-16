@@ -1,10 +1,14 @@
 version: '1.0'
 
 steps:
-   launchit:
-     type: launch-composition
-     composition: asd
+   buildit:
+     type: build
+     image_name: noamt/djanga-testable
+   
+   something_or_another:
+     image: ${{buildit}}
+     commands:
+       - exit 0
      docker_machine:
        create:
          provider: amazon
-
