@@ -4,11 +4,6 @@ steps:
    buildit:
      type: build
      image_name: noamt/djanga-testable
-   
-   something_or_another:
-     image: ${{buildit}}
-     commands:
-       - exit 0
-     docker_machine:
-       create:
-         provider: amazon
+     metadata:
+       set:
+         - CF_PUSHABLE_IMAGE: true
