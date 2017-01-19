@@ -6,4 +6,4 @@ steps:
      image_name: noamt/djanga-testable
      metadata:
        set:
-         - CF_PUSHABLE_IMAGE: false
+         - CF_PUSHABLE_IMAGE: true
