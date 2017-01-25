@@ -21,7 +21,7 @@ steps:
          # Use `netcat` to wait for the db before starting the webapp
          command: bash -c "echo \"Waiting for DB\"; while ! nc -z db 5432; do sleep 0.1; done; python manage.py runserver 0.0.0.0:8000"
          ports:
-           - '8000:8000'
+           - 8000
            
          links:
            - db
