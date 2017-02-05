@@ -1,27 +1,9 @@
 version: '1.0'
 
 steps:
-   buildit:
-     type: build
-     image_name: noamt/djanga-testable
-     metadata:
-       set:
-         - CF_PUSHABLE_IMAGE: true
-   
    comp:
      type: launch-composition
-     composition:
-       version: '2'
-       services:
-         db: # Create a `Postgres` database in a container named `db`
-           image: postgres
-     composition_candidate:
-       web: # Create a container for the Django web application named `web`
-         image: 'noamt/djanga:master' # Base the container on the image we pushed in the previous stage
-         # Use `netcat` to wait for the db before starting the webapp
-         command: bash -c "echo \"Waiting for DB\"; while ! nc -z db 5432; do sleep 0.1; done; python manage.py runserver 0.0.0.0:8000"
-         ports:
-           - 8000
-           
-         links:
-           - db
+     composition: bamigrash
+     docker_machine:
+       create:
+         provider: amazon
