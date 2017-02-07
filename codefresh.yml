@@ -4,6 +4,3 @@ steps:
    comp:
      type: launch-composition
      composition: bamigrash
-     docker_machine:
-       create:
-         provider: amazon
