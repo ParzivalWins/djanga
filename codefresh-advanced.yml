@@ -6,8 +6,7 @@ steps:
     image: python:slim
     commands:
       - python -m unittest composeexample.utils
-
-    fail-fast: false
+    fail_fast: false
     when:
       branch:
         only: [master]
