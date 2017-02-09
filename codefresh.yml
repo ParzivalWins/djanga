@@ -1,9 +1,17 @@
 version: '1.0'
 
 steps:
-   comp:
-     type: launch-composition
-     composition: bamigrash
-     docker_machine:
-       create:
-         provider: amazon
+
+  test_the_project:
+    image: python:slim
+    commands:
+      - python -m unittest composeexample.utils
+
+  build_the_image:
+    type: build
+    image_name: noamt/djanga
+    tag: latest
+
+  push_the_image:
+    type: push
+    candidate: ${{build_the_image}}
