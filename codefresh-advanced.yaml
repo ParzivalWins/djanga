@@ -1,0 +1,30 @@
+version: '1.0'
+
+steps:
+
+  test_the_project:
+    image: python:slim
+    commands:
+      - python -m unittest composeexample.utils
+
+    fail-fast: false
+    when:
+      branch:
+        only: [master]
+
+  build_the_image:
+    type: build
+    image_name: noamt/djanga
+    tag: latest
+    metadata:
+      set:
+        - commit_message: ${{CF_COMMIT_MESSAGE}}
+
+  push_the_image:
+    type: push
+    candidate: ${{build_the_image}}
+    on_success:
+      metadata:
+        set:
+          - ${{build_the_image.imageId}}:
+            - is_public: true
