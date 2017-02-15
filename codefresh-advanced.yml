@@ -5,7 +5,7 @@ steps:
   test_the_project:
     image: python:slim
     commands:
-      - python -m unittest composeexample.utils
+      - exit 1
     fail_fast: false
     when:
       branch:
